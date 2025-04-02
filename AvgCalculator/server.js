@@ -39,7 +39,7 @@ const getNums = async(id)=>{
         const response = await Promise.race([
             await axios.get(`http://20.244.56.144/evaluation-service/${reqId}`, {
                 headers: {
-                    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzQzNjAzNjM2LCJpYXQiOjE3NDM2MDMzMzYsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjE5MmJkMjQ1LTYxYjUtNDc1Yy1hNmE0LTMyNzQ5NzBmM2ZlNyIsInN1YiI6IjIyMDU0MTczQGtpaXQuYWMuaW4ifSwiZW1haWwiOiIyMjA1NDE3M0BraWl0LmFjLmluIiwibmFtZSI6InNpZGRoYXJ0aCBzZW5ndXB0YSIsInJvbGxObyI6IjIyMDU0MTczIiwiYWNjZXNzQ29kZSI6Im53cHdyWiIsImNsaWVudElEIjoiMTkyYmQyNDUtNjFiNS00NzVjLWE2YTQtMzI3NDk3MGYzZmU3IiwiY2xpZW50U2VjcmV0IjoidnJIVHJWSEVucFFad0huZyJ9.EayXgSGx6-NLtVHcKIOMl0ilXK4UZ8O6t3_BAsWJiTk`
+                    Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzQzNjA0NTQwLCJpYXQiOjE3NDM2MDQyNDAsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6IjE5MmJkMjQ1LTYxYjUtNDc1Yy1hNmE0LTMyNzQ5NzBmM2ZlNyIsInN1YiI6IjIyMDU0MTczQGtpaXQuYWMuaW4ifSwiZW1haWwiOiIyMjA1NDE3M0BraWl0LmFjLmluIiwibmFtZSI6InNpZGRoYXJ0aCBzZW5ndXB0YSIsInJvbGxObyI6IjIyMDU0MTczIiwiYWNjZXNzQ29kZSI6Im53cHdyWiIsImNsaWVudElEIjoiMTkyYmQyNDUtNjFiNS00NzVjLWE2YTQtMzI3NDk3MGYzZmU3IiwiY2xpZW50U2VjcmV0IjoidnJIVHJWSEVucFFad0huZyJ9.u7ezokRQH6OcaHNX0l2nYlTQ27JbI2hTPaVdIIquIBA`
                 }
             }),
             new Promise((_, reject) =>
@@ -74,7 +74,7 @@ app.get('/numbers/:id', async (req, res) => {
     }
 
     const newNums = await getNums(id);
-    updateWnd(newNums);
+    updateWindow(newNums);
 
     const wndArr = Array.from(currWnd);
     const avg = (wndArr.length) ? (wndArr.reduce((acc, num) => acc + num, 0) / wndArr.length) : (0);
